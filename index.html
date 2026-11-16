@@ -1,0 +1,444 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A little something for Madhavi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+  <style>
+  :root{--paper:#f6f0e5;--paper2:#fffaf0;--ink:#39342f;--muted:#82786d;--sage:#cbd3bd;--sage-dark:#65745d;--rose:#d9aaa0;--rust:#a85e4b;--yellow:#e8d49a;--shadow:0 12px 28px rgba(69,52,35,.12)}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.7;overflow-x:hidden}
+  body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E")}
+  a{color:inherit}button,input{font:inherit}button{cursor:pointer}
+  :focus-visible{outline:3px solid var(--rust);outline-offset:3px}
+  .topline{height:7px;background:repeating-linear-gradient(135deg,var(--rose) 0 12px,var(--paper2) 12px 24px)}
+  nav{max-width:1080px;margin:auto;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .brand{font:700 27px "Caveat",cursive;color:var(--rust);transform:rotate(-3deg);text-decoration:none}
+  .navlinks{display:flex;gap:19px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+  .navlinks a{text-decoration:none}.navlinks a:hover{color:var(--rust)}
+  .progress{height:3px;background:#e9dfd0;position:sticky;top:0;z-index:20}.progress span{display:block;height:100%;width:0;background:var(--rust)}
+  main{max-width:1020px;margin:auto;padding:0 25px}
+  section{padding:76px 0;position:relative;scroll-margin-top:35px}
+  section+section{border-top:1px dashed #d7cbbb}
+  .kicker{font:23px "Caveat",cursive;color:var(--rust);margin:0 0 4px;transform:rotate(-1deg);display:inline-block}
+  h1,h2,h3,p{margin-top:0}
+  h1{font:500 clamp(46px,8vw,82px)/.98 "Fraunces",serif;letter-spacing:-2px;margin:12px 0 16px}
+  h2{font:500 clamp(34px,5vw,51px)/1.05 "Fraunces",serif;letter-spacing:-1px;margin:4px 0 16px}
+  h3{font:600 18px "DM Sans",sans-serif}
+  p{color:#625b52}
+  .small-note{font:22px "Caveat",cursive;color:var(--sage-dark)}
+  .section-head{max-width:620px;margin-bottom:30px}
+  .btn{display:inline-block;border:1px solid var(--ink);border-radius:30px;padding:10px 18px;text-decoration:none;background:var(--paper2);color:var(--ink);font-size:13px;transition:.2s;cursor:pointer}
+  .btn:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+  .ph{position:relative;display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,#d9dfcf,#f0d9c9);color:#8c8174;font:22px "Caveat",cursive;overflow:hidden}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .tape:before,.taped:before{content:"";position:absolute;top:-10px;left:36%;width:80px;height:21px;background:rgba(217,170,160,.7);transform:rotate(-4deg);z-index:2}
+  .taped{position:relative}
+
+  /* hero */
+  .hero{min-height:600px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px;padding-top:55px}
+  .hero .intro{font-size:16px;max-width:440px}
+  .hero-sticker{display:inline-block;background:var(--yellow);padding:8px 17px;border-radius:50%;font:20px "Caveat",cursive;transform:rotate(-7deg);margin:10px 0 0 8px}
+  .hero-art{position:relative;min-height:410px;display:grid;place-items:center;padding:46px 0 40px}
+  .paper-card{background:var(--paper2);padding:15px 15px 42px;box-shadow:var(--shadow);transform:rotate(4deg);width:min(330px,85%);position:relative;margin:0}
+  .paper-card:before{content:"";position:absolute;width:92px;height:24px;background:rgba(217,170,160,.65);top:-11px;left:35%;transform:rotate(-5deg);z-index:2}
+  .paper-card .ph{height:280px;border:1px solid #e7ddce}
+  .paper-card figcaption{font:25px "Caveat",cursive;text-align:center;padding-top:10px}
+  .floating{position:absolute;font:25px "Caveat",cursive;color:var(--rust);z-index:3;white-space:nowrap}
+  .f1{top:4px;right:4%;transform:rotate(6deg)}.f2{bottom:2px;left:2%;transform:rotate(-6deg)}
+
+  /* chat transcript */
+  .transcript{max-width:520px;margin:0 auto;background:var(--paper2);padding:30px 26px 22px;box-shadow:var(--shadow);transform:rotate(-1deg);border:1px solid #e7ddce;position:relative;min-height:380px;background-image:repeating-linear-gradient(transparent 0 31px,#ece3d3 31px 32px)}
+  .transcript:before{content:"";position:absolute;top:-12px;left:40%;width:110px;height:24px;background:rgba(203,211,189,.8);transform:rotate(2deg)}
+  .transcript .small-note{text-align:center;margin:0 0 8px;display:block}
+  .b{width:fit-content;max-width:84%;padding:9px 15px;margin:10px 0;border-radius:18px;font-size:15px;line-height:1.5;opacity:0;transform:translateY(8px);transition:opacity .45s,transform .45s}
+  .b.in{opacity:1;transform:none}
+  .b.me{margin-left:auto;background:var(--rose);color:#3a2620;border-bottom-right-radius:5px}
+  .b.her{background:var(--sage);color:#2f382b;border-bottom-left-radius:5px}
+  .typing{display:flex;gap:5px;padding:14px 15px}
+  .typing i{width:7px;height:7px;border-radius:50%;background:var(--sage-dark);opacity:.4;animation:dot 1s infinite}
+  .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+  @keyframes dot{50%{opacity:1;transform:translateY(-3px)}}
+
+  /* letter */
+  .letter-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:44px;align-items:start;margin-top:25px}
+  .letter-grid .paper-card{transform:rotate(-3deg);position:sticky;top:50px}
+  .letter-grid .paper-card .ph{height:300px}
+  .letter-wrap{background:var(--paper2);padding:clamp(24px,5vw,52px);box-shadow:var(--shadow);position:relative;border:1px solid #e7ddce}
+  .letter-wrap:before{content:"";position:absolute;top:-12px;left:43%;width:120px;height:25px;background:rgba(232,212,154,.72);transform:rotate(2deg)}
+  .letter-wrap p{font-size:15px;line-height:1.95}
+  .letter-wrap .salutation,.signature{font:29px "Caveat",cursive;color:var(--rust)}
+  .signature{text-align:right;font-size:34px;margin-top:25px}
+
+  /* open when */
+  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 22px;align-items:start}
+  details{background:#fffdf7;box-shadow:0 7px 18px rgba(69,52,35,.12);padding:22px 20px 18px;position:relative;transition:transform .25s}
+  details:nth-child(odd){transform:rotate(-1.6deg)}details:nth-child(even){transform:rotate(1.8deg);margin-top:18px}
+  details[open]{transform:rotate(0)}
+  details:before{content:"";position:absolute;top:-9px;left:36%;width:75px;height:19px;background:rgba(203,211,189,.78);transform:rotate(-4deg)}
+  details:nth-child(2):before{background:rgba(217,170,160,.7)}details:nth-child(3):before{background:rgba(232,212,154,.8)}
+  summary{list-style:none;cursor:pointer;font:25px/1.1 "Caveat",cursive;color:var(--rust);display:flex;flex-direction:column;gap:10px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"tap to open";font:12px "DM Sans",sans-serif;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+  details[open] summary::after{content:"close"}
+  details p{margin:14px 0 0;font-size:14px}
+
+  /* scrapbook */
+  .scrap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 20px;align-items:start}
+  .scrap{background:#fffdf7;padding:10px 10px 26px;box-shadow:0 7px 18px rgba(69,52,35,.12);position:relative;transition:.25s;margin:0}
+  .scrap:nth-child(odd){transform:rotate(-2deg)}.scrap:nth-child(even){transform:rotate(2.5deg);margin-top:25px}
+  .scrap:hover{transform:rotate(0) translateY(-5px)}
+  .scrap .ph{height:170px}
+  .scrap:before{content:"";position:absolute;top:-9px;left:36%;width:75px;height:19px;background:rgba(203,211,189,.78);transform:rotate(-4deg);z-index:2}
+  .scrap:nth-child(2):before{background:rgba(217,170,160,.7)}.scrap:nth-child(3):before{background:rgba(232,212,154,.8)}
+  .scrap figcaption{font:23px "Caveat",cursive;text-align:center;padding-top:9px;color:#514a42;line-height:1.15}
+  .scrap p{font-size:12.5px;color:var(--muted);text-align:center;margin:6px 4px 0;line-height:1.5}
+
+  .scrap .ph.zoomable{cursor:zoom-in}
+  .lightbox{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:64px 20px 28px;background:rgba(40,34,28,.9);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+  .lightbox.open{opacity:1;visibility:visible}
+  .lb-img{display:block;max-width:min(92vw,920px);max-height:74vh;width:auto;height:auto;background:var(--paper2);padding:10px;box-shadow:0 18px 50px rgba(0,0,0,.45);transform:scale(.96);transition:transform .25s}
+  .lightbox.open .lb-img{transform:none}
+  .lb-cap{font:26px "Caveat",cursive;color:var(--paper);text-align:center;margin:0;max-width:92vw}
+  .lb-close{position:absolute;top:16px;right:16px}
+
+  /* songs */
+  .btn[hidden]{display:none}
+  .playlist-card{max-width:750px;margin:25px auto 0;background:#e5e8dc;padding:28px 25px 25px;border-radius:5px;transform:rotate(-.5deg);display:grid;grid-template-columns:210px 1fr;gap:26px 30px;align-items:center}
+  .playlist-cover{margin:0;background:#fffdf7;padding:9px 9px 8px;box-shadow:var(--shadow);transform:rotate(-3deg);position:relative}
+  .playlist-cover:before{content:"";position:absolute;top:-10px;left:34%;width:78px;height:20px;background:rgba(232,212,154,.8);transform:rotate(-4deg);z-index:2}
+  .playlist-cover .ph{aspect-ratio:1/1}
+  .playlist-cover figcaption{font:21px "Caveat",cursive;text-align:center;padding-top:6px;color:#514a42}
+  .playlist-meta h3{font:28px "Caveat",cursive;color:var(--rust);margin:0 0 4px}
+  .playlist-meta p{font-size:14px;margin-bottom:16px}
+  .yt-frame{grid-column:1/-1}
+  .yt-frame iframe{width:100%;aspect-ratio:16/9;min-height:250px;border:0;border-radius:12px;display:block}
+  .yt-frame .small-note{margin:0;text-align:center}
+
+  /* guitar */
+  .guitar-note{max-width:760px;margin:auto;background:#f0e4d6;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start;transform:rotate(.4deg)}
+  .guitar-note h3{font:26px "Caveat",cursive;color:var(--rust)}
+  .guitar-note audio{width:100%;margin:10px 0}
+  .video-box{margin-top:10px;background:#e5d8ca;padding:10px}
+  .video-box video{width:100%;max-height:260px;background:#302d29;display:block}
+
+  /* vader */
+  .vader-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center;max-width:820px;margin:auto}
+  .vader-wrap .paper-card{transform:rotate(-3deg)}
+  .vader-wrap .ph{height:260px}
+  .vader-quote{font:500 clamp(25px,4vw,34px)/1.15 "Fraunces",serif;margin-bottom:18px}
+  .vader-message{font:27px "Caveat",cursive;color:var(--sage-dark);min-height:58px;margin:12px 0}
+  .vader-wrap button{border:1px solid var(--rust);background:transparent;color:var(--rust);padding:9px 17px;border-radius:25px}
+
+  /* candle + question */
+  .finale{text-align:center}
+  .candle{position:relative;display:block;width:54px;height:130px;margin:0 auto 10px;border:0;background:none;padding:0}
+  .stick{position:absolute;bottom:0;left:13px;width:28px;height:86px;border-radius:5px;background:repeating-linear-gradient(-45deg,var(--rose) 0 10px,var(--paper2) 10px 20px);box-shadow:0 0 0 1px #d9c9b6}
+  .wick{position:absolute;left:26px;top:34px;width:2px;height:10px;background:var(--ink)}
+  .flame{position:absolute;left:18px;top:2px;width:18px;height:34px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:radial-gradient(ellipse at 50% 72%,#fffbe6,var(--yellow) 45%,var(--rose));transform-origin:50% 100%;animation:fl 1.4s ease-in-out infinite;transition:opacity .5s}
+  @keyframes fl{50%{transform:scale(.92,1.07) rotate(-3deg)}}
+  .candle.out .flame{opacity:0;animation:none}
+  .wish{min-height:36px;margin-bottom:46px}
+  .question{max-width:640px;margin:0 auto;background:var(--paper2);border:1px dashed #c9b9a5;padding:38px 30px 34px;position:relative}
+  .question:before{content:"";position:absolute;top:-12px;left:42%;width:110px;height:24px;background:rgba(232,212,154,.8);transform:rotate(-2deg)}
+  .choices{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+  .btn.fill{background:var(--rust);border-color:var(--rust);color:#fff}
+  .btn.fill:hover{background:var(--ink);border-color:var(--ink)}
+  .big-sign{font:clamp(44px,8vw,75px) "Caveat",cursive;color:var(--rust);transform:rotate(-3deg);display:inline-block;margin:56px 0 6px}
+  .footer{font:18px "Caveat",cursive;color:var(--muted);text-align:center;padding:0 20px 30px}
+
+  @media(max-width:760px){
+  nav{align-items:flex-start}.navlinks{gap:10px;max-width:230px;justify-content:flex-end}
+  .hero,.letter-grid,.vader-wrap,.guitar-note,.playlist-card{grid-template-columns:1fr}
+  .playlist-cover{max-width:210px;margin:0 auto}.playlist-meta{text-align:center}
+  .hero{padding-top:30px;min-height:auto}.hero-art{min-height:350px}
+  .letter-grid .paper-card{position:static;max-width:260px;margin:auto}
+  .notes{grid-template-columns:1fr}details:nth-child(even){margin-top:0}
+  .scrap-grid{grid-template-columns:1fr 1fr;gap:22px 14px}.scrap .ph{height:135px}
+  section{padding:58px 0}main{padding:0 18px}
+  }
+  @media(max-width:430px){.brand{font-size:23px}.navlinks{font-size:10px;gap:8px}.scrap{padding:7px 7px 20px}.hero-art{min-height:310px}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+  </style>
+  </head>
+  <body>
+  <div class="topline"></div>
+  <nav>
+    <a class="brand" href="#home">a little something</a>
+    <div class="navlinks"><a href="#letter">the letter</a><a href="#openwhen">open when</a><a href="#scrapbook">little things</a><a href="#songs">songs</a><a href="#vader">Vader</a><a href="#finale">the last page</a></div>
+  </nav>
+  <div class="progress"><span id="progressBar"></span></div>
+  <main>
+
+  <section class="hero" id="home">
+    <div>
+      <p class="kicker">saving a tiny corner of the internet for ya!🤭</p>
+      <h1>Hey,<br>Madhavi!</h1>
+      <p class="intro">Happy birthday! I made you a little something. It’s a bit of a collection of things, thoughts, songs and probably an unreasonable amount of affection for a certain cat.</p>
+      <span class="hero-sticker">made with care, obviously!</span>
+    </div>
+    <div class="hero-art">
+      <span class="floating f1">psst... it’s your day!</span>
+      <figure class="paper-card">
+        <!-- INSERT HERE: a hero photo for the polaroid (square or portrait) -->
+        <div class="ph"><img src="pics\main.jpeg" alt="" onerror="this.remove()"></div>
+        <figcaption>I don't have a photo of yours :/. So Vader took over your spot</figcaption>
+      </figure>
+      <span class="floating f2">17 November</span>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="section-head"><p class="kicker">I assumed this is how the conversation would go</p><h2>A transcript, probably</h2><p>Don’t blame me if you replied differently.</p></div>
+    <div class="transcript" id="chat"><span class="small-note">Today, 17 November</span></div>
+  </section>
+
+  <section id="letter">
+    <div class="section-head"><p class="kicker">first things first</p><h2>A little note for you</h2><p>Because some things deserve more than a quick text, don’t they?</p></div>
+    <div class="letter-grid">
+      <figure class="paper-card">
+        <!-- INSERT HERE: a photo to sit beside the letter -->
+        <div class="ph"><img src="pics\letter.png" alt="" onerror="this.remove()">Photo goes here</div>
+        <figcaption>spoiler alert: it's a letter</figcaption>
+      </figure>
+      <article class="letter-wrap">
+        <div class="salutation">Dear Madhavi,</div>
+        <p>Happy birthday! Here’s a little something, with a few thoughts, a few songs and probably more effort than strictly necessary.</p>
+        <p>It’s funny how a conversation with someone can become a familiar little part of your day. The random cats, the garba fitchecks, the songs, the stories, the occasional Vader update, they all find their way into the ordinary bits of life. I’m glad our paths crossed, and I’m glad we kept talking.</p>
+        <p>I hope this next year brings you new places to see, things to learn, music to get lost in, food worth talking about, and people who make the world feel a little softer. Keep being curious, keep collecting stories, and please keep reminding Vader that the world does not revolve around him.</p>
+        <p>Anyway, I won’t make this too long. There are other things on this little page, and I suspect a certain cat has been waiting for his section.</p>
+        <div class="signature">Take care, always. K</div>
+      </article>
+    </div>
+    <p class="small-note" style="text-align:center;margin-top:24px">P.S. yes, I did spend time making this. no, I will not be taking questions. And yes I did send you another physical copy too :D.</p><p class="small-note" style="text-align:center;margin-top:24px"> But sadly it is still on the way 😫😭</p>
+  </section>
+
+  <section id="openwhen">
+    <div class="section-head"><p class="kicker">for later</p><h2>Open when…</h2><p>A few notes for days that need one. No rush, they’ll keep.</p></div>
+    <div class="notes">
+      <details><summary>you’re having a rough day</summary><p>Then it’s officially a day to be gentle with yourself. Eat something good, put on something loud, and text me if you want company or a call, ’m happy to sit in the mud with you.</p><p>If you want an ice cream, ring a bell and I will bring it to you.</p></details>
+      <details><summary>Vader has won again</summary><p>It was always going to happen. He has the confidence of someone who has never lost an argument, mostly because he leaves before it starts. Pay the tribute. Pick your battles.</p></details>
+      <details><summary>you can’t sleep?</summary><p>Put on some music turn the volume down, and let the songs do the thinking for a bit. Tomorrow can wait its turn. But also remember, YOU ARE NOT A VAMPIRE, SO SLEEEP</p></details>
+    </div>
+  </section>
+
+  <section id="scrapbook">
+    <div class="section-head"><p class="kicker">bits and pieces</p><h2>A little collection of things</h2><p>Some things don’t need a big explanation. They’re just nice to keep around. Tap a photo to see it properly.</p></div>
+    <div class="scrap-grid">
+      <!-- INSERT HERE: scrapbook photo 1 -->
+      <figure class="scrap"><div class="ph"><img src="pics\first song.jpeg" alt="The first few songs you made me listen to" onerror="this.remove()">Photo goes here</div><figcaption>the first few songs you made me listen to</figcaption><p>I was really skeptical about listening to Hindi songs, but you somehow convinced me to give them a shot. The songs that somehow turn into conversations, and the conversations that turn into more songs. Hope you send me more songs to try out. My Hindi playlist is waiting for you.</p></figure>
+      <!-- INSERT HERE: scrapbook photo 2 -->
+      <figure class="scrap"><div class="ph"><img src="pics\names.jpeg" alt="The time we skipped names" onerror="this.remove()">Photo goes here</div><figcaption>names? what's that?</figcaption><p>We kept speaking and introducing ourselves, but somehow we never got to the part where we actually said our names. Thankful that guy called out and made us ask for them.</p></figure>
+      <!-- INSERT HERE: scrapbook photo 3 -->
+      <figure class="scrap"><div class="ph"><img src="pics\food.jpeg" alt="The Chef and her meals" onerror="this.remove()">Photo goes here</div><figcaption>somewhere in between the dishes</figcaption><p>For all the dishes you made me tried. You always shared a picture of how it looked and how to turned out. It was always fun to watch the dishes come to life. But also you suggesting me when I cooked. And of course the time I failed to make instant noodles</p></figure>
+      <!-- INSERT HERE: scrapbook photo 4 -->
+      <figure class="scrap"><div class="ph"><img src="pics\sky.jpeg" alt="The Skies through your eyes" onerror="this.remove()">Photo goes here</div><figcaption>The Skies through your eyes</figcaption><p>Not just me sharing the skies, but you showing me how beautiful they can be to. Of course your pictures always make the sky look more amazing.</p></figure>
+    </div>
+    <div>
+
+    </div>
+        <div class="scrap-grid">
+      <!-- INSERT HERE: scrapbook photo 1 -->
+      <figure class="scrap"><div class="ph"><img src="pics\m&ms.jpeg" alt="All the chocolates you never shared" onerror="this.remove()">Photo goes here</div><figcaption>Choclocates lots</figcaption><p>Of all the chocolates you never shared, this the only evidence you shared. Rest all are hidden away. But don't worry your sceret is safe with me</p></figure>
+      <!-- INSERT HERE: scrapbook photo 2 -->
+      <figure class="scrap"><div class="ph"><img src="pics\flirt.png" alt="The time we skipped names" onerror="this.remove()">Photo goes here</div><figcaption>Flirting? Maybe?</figcaption><p>I won't lie this was one of the times I genuily panicked. After I realised what I might've said. Was it good? Maybe. Was is it bad? Probably. Was is scary? FCK YEAH.</p></figure>
+      <!-- INSERT HERE: scrapbook photo 3 -->
+      <figure class="scrap"><div class="ph"><img src="pics\us.jpeg" alt="The Yells and Pleases" onerror="this.remove()">If I summarised our conversations</div><figcaption>If I summarised our conversations</figcaption><p>I day doesn't pass by until you yell at me for me not going to gym or being lazy and me asking you to not skip a meal. But now that's our everyday</p></figure>
+      <!-- INSERT HERE: scrapbook photo 4 -->
+      <figure class="scrap"><div class="ph"><img src="pics\pact.jpeg" alt="The Pact" onerror="this.remove()">Photo goes here</div><figcaption>The Pact</figcaption><p>Well, there might be many converstions we have, but I am sure as hell that I ain't forgetting "the pact". Not because it means something, but because it's free.And I can't pass on a free money.</p></figure>
+    </div>
+  </section>
+
+
+  <section id="songs">
+    <div class="section-head">
+      <p class="kicker">press play, maybe?</p>
+      <h2>A playlist for you</h2>
+      <p></p>
+    </div>
+
+    <div class="playlist-card">
+
+      <figure class="playlist-cover">
+        <div class="ph">
+          <img src="pics\cat.png" alt="Playlist cover"
+              onerror="this.remove()">
+          Cover goes here
+        </div>
+        <figcaption>a mixtape, just for you!</figcaption>
+      </figure>
+
+      <div class="playlist-meta">
+        <h3>press play, whenever</h3>
+
+        <p>
+          Some songs are familiar, some are new, and a few just belong here.
+          A few songs you made me listen to and a few that we both know.
+          A few you might know and a few that you never knew.
+          Songs that turned into conversations, and a few that are just
+          here because they belong. Best with the volume a little too high.
+        </p>
+
+        <a class="btn"
+          id="ytOpen"
+          href="https://music.youtube.com/playlist?list=PLeWx-3mxIm-0&si=FTlNECZMRoeP8rU9"
+          target="_blank"
+          rel="noopener">
+          ♪ Open in YouTube Music
+        </a>
+      </div>
+
+
+
+    </div>
+  </section>
+
+
+  <section id="guitar">
+    <div class="section-head"><p class="kicker">a small side quest</p><h2>A song, from me</h2><p>Not a concert. Not a masterpiece. Just a little something I wanted to share.</p></div>
+    <div class="guitar-note">
+      <div><h3>one guitar, a few attempts...</h3><p>I am still very much learning, so please be nice to the strings.</p>
+        <!-- INSERT HERE: your guitar recording (mp3) -->
+        <audio controls preload="none" src="av/bday.mp3"></audio>
+        <p class="small-note" style="margin:0">Like you mentioned, some things don’t have to be perfect. :)</p>
+      </div>
+      <div><h3>and a little behind the scenes</h3>
+        <!-- INSERT HERE: your behind-the-scenes video (mp4) and a thumbnail image for poster -->
+        <div class="video-box"><video controls playsinline muted preload="none" poster="place here"><source src="av/bts.mp4" type="video/mp4"></video></div>
+      </div>
+    </div>
+  </section>
+
+
+<section id="vader">
+  <div class="section-head">
+    <p class="kicker">an important announcement</p>
+    <h2>The Vader archives</h2>
+    <p>No birthday website would be complete without acknowledging management.</p>
+  </div>
+
+  <div class="vader-wrap">
+    <figure class="paper-card">
+      <!-- Vader's portrait -->
+      <div class="ph">
+        <img src="pics\vader.jpeg" alt="Vader"
+             onerror="this.remove()">
+        Vader’s portrait goes here
+      </div>
+      <figcaption>the boss </figcaption>
+    </figure>
+
+    <div>
+      <p class="vader-quote">
+        “I was informed this present, so I made the website.
+        Karthik was lazy as usual and slept.”
+      </p>
+
+      <div class="vader-message" id="vaderMessage" aria-live="polite">
+        I have permitted this birthday. You are welcome.
+      </div>
+
+      <button id="vaderButton">
+        Ask Vader for another message
+      </button>
+    </div>
+  </div>
+</section>
+
+  <section class="finale" id="finale">
+    <p class="kicker">that’s all (for now)</p>
+    <h2>Make a wish.</h2>
+    <button class="candle" id="candle" aria-label="Blow out the candle"><span class="flame"></span><span class="wick"></span><span class="stick"></span></button>
+    <p class="small-note wish" id="wish">press the candle, then wish quietly.</p>
+
+
+
+    <div class="big-sign">Happy birthday, Madhavi</div>
+    <p class="small-note">P.S. give Vader my regards. And maybe a treat. Mostly a treat. 'Cause he made this website</p>
+  </section>
+  </main>
+  <div class="footer">made on the internet for ya!</div>
+
+  <!-- photo viewer for the little collection -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+    <button class="btn lb-close" id="lbClose" type="button">close</button>
+    <img class="lb-img" id="lbImg" alt="">
+    <p class="lb-cap" id="lbCap"></p>
+  </div>
+
+  <script>
+  const $=id=>document.getElementById(id);
+  addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;$('progressBar').style.width=(m>0?scrollY/m*100:0)+'%'});
+
+  // Chat transcript: plays when scrolled into view
+  const script=[['me','Hey. Quick question. What are you doing on the 17th?'],['her','Um. Birthday stuff? Why'],['me','No reason. I just made you a website.'],['her','Huh? wdym?'],['me','Hope you like it :P']];
+  const chat=$('chat'),still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function say(i){
+    if(i>=script.length)return;
+    const [who,text]=script[i];
+    const show=()=>{const b=document.createElement('div');b.className='b '+who;b.textContent=text;chat.appendChild(b);requestAnimationFrame(()=>requestAnimationFrame(()=>b.classList.add('in')));setTimeout(()=>say(i+1),still?0:900)};
+    if(still||who==='me')return show();
+    const t=document.createElement('div');t.className='b her typing in';t.innerHTML='<i></i><i></i><i></i>';chat.appendChild(t);
+    setTimeout(()=>{t.remove();show()},1000);
+  }
+  new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){o.disconnect();say(0)}},{threshold:.4}).observe(chat);
+
+  // YouTube Music: INSERT HERE your playlist link between the quotes (replace place here)
+  // Works with music.youtube.com/playlist?list=... or youtube.com/playlist?list=... (playlist must be Public or Unlisted)
+
+  const YT_URL = 'https://music.youtube.com/playlist?list=PLeWx-3mxIm-0&si=FTlNECZMRoeP8rU9';
+
+  const yt = YT_URL.match(/[?&]list=([A-Za-z0-9_-]+)/);
+
+  if (yt && $('ytFrame')) {
+    $('ytFrame').innerHTML =
+      '<iframe title="Playlist player" ' +
+      'src="https://www.youtube.com/embed/videoseries?list=' + yt[1] + '" ' +
+      'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
+      'allowfullscreen loading="lazy" ' +
+      'referrerpolicy="strict-origin-when-cross-origin"></iframe>';
+
+    $('ytOpen').href =
+      'https://music.youtube.com/playlist?list=' + yt[1];
+
+    $('ytOpen').hidden = false;
+  }
+
+
+  // Scrapbook photo viewer
+  const lb=$('lightbox');let lbFrom=null;
+  function openLb(ph){
+    const img=ph.querySelector('img');if(!img)return;
+    $('lbImg').src=img.currentSrc||img.src;$('lbImg').alt=img.alt;
+    const cap=ph.parentElement.querySelector('figcaption');$('lbCap').textContent=cap?cap.textContent:'';
+    lbFrom=ph;lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('lbClose').focus();
+  }
+  function closeLb(){
+    if(!lb.classList.contains('open'))return;
+    lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';
+    if(lbFrom)lbFrom.focus();
+  }
+  document.querySelectorAll('.scrap .ph').forEach(ph=>{
+    const img=ph.querySelector('img');if(!img)return;
+    const arm=()=>{ph.classList.add('zoomable');ph.tabIndex=0;ph.setAttribute('role','button');ph.setAttribute('aria-label','View photo larger')};
+    if(img.complete&&img.naturalWidth)arm();else img.addEventListener('load',arm);
+    ph.addEventListener('click',()=>{if(ph.classList.contains('zoomable'))openLb(ph)});
+    ph.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&ph.classList.contains('zoomable')){e.preventDefault();openLb(ph)}});
+  });
+  $('lbClose').addEventListener('click',closeLb);
+  lb.addEventListener('click',e=>{if(e.target!==$('lbImg'))closeLb()});
+  addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+
+  // Vader
+  const lines=['I have permitted this birthday. You are welcome.','The human is acceptable. The snacks are under review.','I demand tribute. Preferably a new cat woman.','I was told there would be cake. I see no cake.','Happy birthday. You may admire me for one (1) minute.','I have reviewed the playlist. I think it is stupid be he says it will work.','I am innocent until proven otherwise. But I am guilty of being adorable.','Someday this galaxy will be mine. But for now, I will accept this birthday.','I have been informed that this is a birthday.'];
+  $('vaderButton').addEventListener('click',()=>{const el=$('vaderMessage');let n;do{n=lines[Math.floor(Math.random()*lines.length)]}while(n===el.textContent);el.textContent=n});
+
+  // Candle
+  $('candle').addEventListener('click',e=>{const out=e.currentTarget.classList.toggle('out');$('wish').textContent=out?'wish received. I’m rooting for it.':'press the candle, then wish quietly.'});
+  </script>
+  </body>
+  </html>
